@@ -334,7 +334,7 @@ export default function Home() {
             name="Gl Charge"
             description="A web app for managing electric vehicle charging sessions."
             contribution="One of 3 frontend developers on the team. Implemented customizable grid layout for the dashboard."
-            link="https://glcharge.com/"
+            link="https://www.zerodays.dev/en/projects/gl-charge"
             image="/images/projects/glcharge.webp"
             technologies={['Next.js', 'Supabase', 'TailwindCSS']}
             group="zerodays"
