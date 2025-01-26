@@ -146,20 +146,20 @@ const ResponsiveRadarChart: React.FC<ResponsiveRadarChartProps> = ({
   // Ensure we don't render the chart until we have valid dimensions
   const chartSize = Math.min(width, height);
 
-  console.log(chartSize);
-
   return (
     <div
       ref={containerRef}
       className="relative flex aspect-square h-full w-full max-w-[610px] items-center justify-center md:aspect-auto">
       <div className="absolute">
-        <RadarChart
-          width={chartSize}
-          height={chartSize}
-          data={data}
-          variables={variables}
-          color={color}
-        />
+        {chartSize > 0 && (
+          <RadarChart
+            width={chartSize}
+            height={chartSize}
+            data={data}
+            variables={variables}
+            color={color}
+          />
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import Navbar from '@/components/common/navbar';
+import ProjectItem from '@/components/common/project-item';
 import ResponsiveRadarChart from '@/components/common/radar-chart';
 import ScrollIndicator from '@/components/common/scroll-indicator';
 import Link from 'next/link';
@@ -100,7 +101,7 @@ export default function Home() {
                   link="https://tailwindcss.com"
                 />
                 <SkillItem
-                  label="React Native"
+                  label="React Native & Expo"
                   description="Mobile development"
                   link="https://reactnative.dev"
                 />
@@ -246,10 +247,107 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="projects" className="container mx-auto py-20">
+        <h2 className="mb-8 text-3xl font-bold text-white">Projects 🚀</h2>
+        <div className="flex flex-col gap-8">
+          <ProjectItem
+            name="VizEngine"
+            description="Audio Visualization Engine for the Web. (Master's Thesis WIP)"
+            link="https://viz-engine.vercel.app/"
+            github="https://github.com/vucinatim/viz-engine"
+            image="/images/projects/viz-engine.png"
+            technologies={[
+              'React',
+              'Next.js',
+              'Zustand',
+              'Three.js',
+              'Web Audio API',
+            ]}
+            group="personal"
+          />
+          <ProjectItem
+            name="Campin"
+            description="A platform to help campers find the perfect spot while providing tools for campsite owners to manage reservations."
+            link="https://campin-frontend-lj93.vercel.app/"
+            github="https://github.com/tjazsilovsek/campin-frontend"
+            image="/images/projects/campin.png"
+            technologies={['React', 'Next.js', 'Supabase', 'Stripe']}
+            group="personal"
+          />
+          <ProjectItem
+            name="Arena of Tanks"
+            description="A local multiplayer tank game built with Unity and C#."
+            image="/images/projects/arena-of-tanks.png"
+            technologies={['Unity', 'C#', 'AirConsole']}
+            group="personal"
+          />
+          <ProjectItem
+            name="AI Video Editor"
+            description="A tool to automatically produce videos using AI."
+            github="https://github.com/vucinatim/content-creator"
+            image="/images/projects/content-creator.png"
+            technologies={['React', 'Next.js', 'Remotion', 'Supabase']}
+            group="personal"
+          />
+          <ProjectItem
+            name="Breakout (browser game)"
+            description="A breakout game built with R3F and React."
+            github="https://github.com/vucinatim/three-playground"
+            image="/images/projects/breakout.png"
+            technologies={['React', 'R3F', 'Zustand']}
+            group="personal"
+          />
+          <ProjectItem
+            name="Youtube playlist downloader"
+            description="A tool to batch download all/selected the videos from a Youtube playlist."
+            github="https://github.com/vucinatim/youtube-playlist-to-mp3"
+            image="/images/projects/yt-to-mp3.png"
+            technologies={['React', 'Next.js', 'ytdl-core', 'ffmpeg']}
+            group="personal"
+          />
+          <ProjectItem
+            name="AstraAI"
+            description="Astra AI is an intelligent tutor, harnessing the power of GPT-4o, to allow users to pose any math-related question."
+            contribution="One of 3 active frontend developers on the team."
+            link="https://ai.astra.si/"
+            image="/images/projects/astraai.png"
+            technologies={[
+              'Next.js',
+              'OpenAI API',
+              'Supabase',
+              'TailwindCSS',
+              'Vercel',
+            ]}
+            group="zerodays"
+          />
+          <ProjectItem
+            name="Gl Charge"
+            description="A web app for managing electric vehicle charging sessions."
+            contribution="One of 3 frontend developers on the team. Implemented customizable grid layout for the dashboard."
+            link="https://glcharge.com/"
+            image="/images/projects/glcharge.webp"
+            technologies={['Next.js', 'Supabase', 'TailwindCSS']}
+            group="zerodays"
+          />
+          <ProjectItem
+            name="Curious App"
+            description="A mobile app for experience sampling developed for Faculty of Education at Ljubljana."
+            contribution="Project setup, design, and development."
+            link="https://play.google.com/store/apps/details?id=dev.zerodays.esm&hl=en-us"
+            image="/images/projects/curious.webp"
+            technologies={['React Native', 'Expo', 'TailwindCSS']}
+            group="zerodays"
+          />
+        </div>
+        <div className="flex items-center justify-center py-16 text-lg">
+          more coming soon... (im too lazy to add them all atm)
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="border-t border-gray-800 py-6 text-pink-500">
         <div className="container mx-auto text-center text-sm text-gray-500">
-          Made with ❤️ using Next.js, ShadCN, and TailwindCSS.
+          {'</> with ❤️ by Me.'}
         </div>
       </footer>
     </div>
