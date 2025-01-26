@@ -1,8 +1,11 @@
+import { BlogPostCard } from '@/components/common/blog-post';
 import Navbar from '@/components/common/navbar';
 import ProjectItem from '@/components/common/project-item';
 import ResponsiveRadarChart from '@/components/common/radar-chart';
 import ScrollIndicator from '@/components/common/scroll-indicator';
+import RocketScene from '@/components/three/rocket-scene';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 export default function Home() {
   return (
@@ -10,18 +13,25 @@ export default function Home() {
       {/* Navbar */}
       <Navbar />
 
-      {/* Hero Section */}
-      <section
-        className="relative flex items-center justify-center"
-        style={{
-          height: 'calc(100vh - var(--navbar-height))',
-        }}>
-        <div className="flex flex-col items-center justify-center gap-4 font-bold">
-          <h1 className="text-center text-5xl md:text-7xl">Hi 👋</h1>
-          <h4 className="text-center text-5xl md:text-7xl">I&apos;m Tim</h4>
-        </div>
-        <ScrollIndicator />
-      </section>
+      <div className="relative" id="three-root">
+        {/* Hero Section */}
+        <section
+          className="relative z-10 flex items-center justify-center"
+          style={{
+            height: '100dvh',
+          }}>
+          <div className="flex flex-col items-center justify-center gap-4 font-bold">
+            <h1 className="text-center text-5xl md:text-7xl">Hi 👋</h1>
+            <h4 className="text-center text-5xl md:text-7xl">I&apos;m Tim</h4>
+          </div>
+          <ScrollIndicator />
+        </section>
+
+        <Suspense>
+          <RocketScene />
+        </Suspense>
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
+      </div>
 
       {/* Who Am I Section */}
       <section id="who-am-i" className="container mx-auto py-20 text-justify">
@@ -339,8 +349,20 @@ export default function Home() {
             group="zerodays"
           />
         </div>
-        <div className="flex items-center justify-center py-16 text-lg">
+        <div className="flex items-center justify-center py-16 text-center text-lg">
           more coming soon... (im too lazy to add them all atm)
+        </div>
+      </section>
+
+      <section id="blog" className="container mx-auto py-20">
+        <h2 className="mb-8 text-3xl font-bold text-white">Blog 📝</h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <BlogPostCard
+            href="https://dev.to/zerodays/building-an-interactive-3d-rocket-easter-egg-with-react-three-fiber-4pc"
+            title="Building an Interactive 3D Rocket Easter Egg with React Three Fiber"
+            image="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fmaj98k0ljpzfm2a8n9dv.png"
+            date={new Date('2024-09-17')}
+          />
         </div>
       </section>
 

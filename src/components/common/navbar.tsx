@@ -18,7 +18,7 @@ const Logo = () => {
 const Navbar = () => {
   return (
     <nav
-      className="sticky top-0 z-10 flex items-center justify-center"
+      className="fixed inset-x-0 top-0 z-20 flex items-center justify-center"
       style={{ height: 'var(--navbar-height)' }}>
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-8">
         <div className="flex items-center justify-between overflow-hidden rounded-full border border-gray-800 bg-black/40 px-8 py-4 backdrop-blur-sm">
@@ -30,6 +30,7 @@ const Navbar = () => {
             <LinkButton href="#who-am-i">Who am I?</LinkButton>
             <LinkButton href="#technical-skills">Technical Skills</LinkButton>
             <LinkButton href="#projects">Projects</LinkButton>
+            <LinkButton href="#blog">Blog</LinkButton>
           </div>
 
           {/* Social Links */}
@@ -77,6 +78,7 @@ const Navbar = () => {
                     Technical Skills
                   </LinkButton>
                   <LinkButton href="#projects">Projects</LinkButton>
+                  <LinkButton href="#blog">Blog</LinkButton>
 
                   <div className="mt-6 flex space-x-4">
                     <Link
