@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 'use client';
 import { Instance, Instances } from '@react-three/drei';
-import { GroupProps, useFrame, useThree } from '@react-three/fiber';
+import { GroupProps, useFrame } from '@react-three/fiber';
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Color,
@@ -91,10 +91,10 @@ const PlanetMaterial = new MeshStandardMaterial({
 });
 
 const SpaceEnvironment = memo((props: GroupProps) => {
-  const height = useThree((state) => state.viewport.height);
   const [debug] = useState(false);
   const environmentRef = useRef<Group<Object3DEventMap>>(null);
   const radius = 2000; // Cylinder radius
+  const height = 4000;
   const innerPadding = 1500; // Inner padding for a hole in the center of the cylinder
   const fadeSpeed = 0.5;
 
@@ -163,6 +163,8 @@ const SpaceEnvironment = memo((props: GroupProps) => {
       />
     ));
   }, [radius, height, innerPadding]);
+
+  if (!height || height < 1) return null;
 
   return (
     <group {...props} ref={environmentRef}>
