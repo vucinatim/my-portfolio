@@ -116,6 +116,11 @@ export default function Home() {
                   link="https://reactnative.dev"
                 />
                 <SkillItem
+                  label="Convex"
+                  description="Backend as a service"
+                  link="https://www.convex.dev"
+                />
+                <SkillItem
                   label="Three.js & React Three Fiber"
                   description="3D graphics"
                   link="https://threejs.org"
@@ -215,8 +220,8 @@ export default function Home() {
             <ResponsiveRadarChart
               data={{
                 Frontend: 10,
-                Backend: 6,
-                Databases: 4,
+                Backend: 7,
+                Databases: 6,
                 DevOps: 5,
                 GraphicDesign: 9,
                 Architecting: 8,
@@ -237,7 +242,7 @@ export default function Home() {
               data={{
                 ProblemSolving: 9,
                 Communication: 8,
-                Leadership: 7,
+                Leadership: 8,
                 Teamwork: 9,
                 Creativity: 10,
                 Adaptability: 8,
@@ -261,6 +266,39 @@ export default function Home() {
         <h2 className="mb-8 text-3xl font-bold text-white">Projects 🚀</h2>
         <div className="flex flex-col gap-8">
           <ProjectItem
+            name="VRM Studio"
+            description="Lightweight, browser-based application for VTubing via holistic webcam tracking"
+            link="https://vrm-studio.vercel.app/"
+            github="https://github.com/vucinatim/vrm-studio"
+            image="https://raw.githubusercontent.com/vucinatim/vrm-studio/refs/heads/main/public/images/screenshot.png"
+            technologies={['React', 'WASM', 'Mediapipe', 'Three.js', 'R3F']}
+            group="personal"
+          />
+          <ProjectItem
+            name="Convex Lite"
+            description="An open-source, self-hostable full-stack framework inspired by the developer experience of Convex"
+            github="https://github.com/vucinatim/convex-lite"
+            image="https://raw.githubusercontent.com/vucinatim/convex-lite/refs/heads/main/public/architecture.excalidraw.svg"
+            technologies={['TypeScript', 'Express', 'Drizzle', 'SQLite']}
+            group="personal"
+          />
+          <ProjectItem
+            name="Yu-Gi-AI"
+            description="An LLM powered Yu-Gi-Oh deck builder and card vector-search engine"
+            link="https://yu-gi-ai.vercel.app/"
+            image="/images/projects/yu-gi-ai.png"
+            technologies={[
+              'Convex',
+              'Next.js',
+              'TailwindCSS',
+              'Vercel',
+              'OpenAI',
+              'Gemini',
+              'Vercel AI SDK',
+            ]}
+            group="personal"
+          />
+          <ProjectItem
             name="VizEngine"
             description="Audio Visualization Engine for the Web. (Master's Thesis WIP)"
             link="https://viz-engine.vercel.app/"
@@ -276,29 +314,20 @@ export default function Home() {
             group="personal"
           />
           <ProjectItem
-            name="Campin"
-            description="A platform to help campers find the perfect spot while providing tools for campsite owners to manage reservations."
-            link="https://campin-frontend-lj93.vercel.app/"
-            github="https://github.com/tjazsilovsek/campin-frontend"
-            image="/images/projects/campin.png"
-            technologies={['React', 'Next.js', 'Supabase', 'Stripe']}
-            group="personal"
-          />
-          <ProjectItem
             name="Arena of Tanks"
             description="A local multiplayer tank game built with Unity and C#."
             image="/images/projects/arena-of-tanks.png"
             technologies={['Unity', 'C#', 'AirConsole']}
             group="personal"
           />
-          <ProjectItem
+          {/* <ProjectItem
             name="AI Video Editor"
             description="A tool to automatically produce videos using AI."
             github="https://github.com/vucinatim/content-creator"
             image="/images/projects/content-creator.png"
             technologies={['React', 'Next.js', 'Remotion', 'Supabase']}
             group="personal"
-          />
+          /> */}
           <ProjectItem
             name="Breakout (browser game)"
             description="A breakout game built with R3F and React."
@@ -313,6 +342,15 @@ export default function Home() {
             github="https://github.com/vucinatim/youtube-playlist-to-mp3"
             image="/images/projects/yt-to-mp3.png"
             technologies={['React', 'Next.js', 'ytdl-core', 'ffmpeg']}
+            group="personal"
+          />
+          <ProjectItem
+            name="Campin"
+            description="A platform to help campers find the perfect spot while providing tools for campsite owners to manage reservations."
+            link="https://campin-frontend-lj93.vercel.app/"
+            github="https://github.com/tjazsilovsek/campin-frontend"
+            image="/images/projects/campin.png"
+            technologies={['React', 'Next.js', 'Supabase', 'Stripe']}
             group="personal"
           />
           <ProjectItem
@@ -362,6 +400,19 @@ export default function Home() {
             title="Building an Interactive 3D Rocket Easter Egg with React Three Fiber"
             image="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fmaj98k0ljpzfm2a8n9dv.png"
             date={new Date('2024-09-17')}
+          />
+          <BlogPostCard
+            href="https://dev.to/zerodays/beyond-the-popup-crafting-next-level-chrome-extensions-with-crxjs-3elg"
+            title="Beyond the Popup: Crafting Next-Level Chrome Extensions with crxjs"
+            imageOffset={[80, 0]}
+            image="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fitqva4rno7bxy7qx50or.png"
+            date={new Date('2025-02-19')}
+          />
+          <BlogPostCard
+            href="https://dev.to/vucinatim/a-developers-brush-stroke-nl7"
+            title="A Developer's Brush Stroke"
+            image="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fkdyoa0sqp1rywj66kicj.png"
+            date={new Date('2025-06-09')}
           />
         </div>
       </section>

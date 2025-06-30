@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 interface BlogPostCardProps {
@@ -9,6 +9,7 @@ interface BlogPostCardProps {
   title: string;
   image: string;
   date: Date;
+  imageOffset?: [number, number];
 }
 
 export const BlogPostCard = ({
@@ -16,6 +17,7 @@ export const BlogPostCard = ({
   title,
   image,
   date,
+  imageOffset = [0, 0],
 }: BlogPostCardProps) => {
   return (
     <Link
@@ -24,11 +26,13 @@ export const BlogPostCard = ({
       rel="noopener noreferrer"
       className="bg-card group flex cursor-pointer flex-col transition-all hover:brightness-125">
       <div className="relative mx-auto min-h-64 w-full overflow-hidden rounded-xl">
-        <Image
+        <img
           src={image}
           alt={title}
-          className="object-cover object-center"
-          fill
+          className="h-full w-full object-cover"
+          style={{
+            objectPosition: `calc(50% + ${imageOffset[0]}px) calc(50% + ${imageOffset[1]}px)`,
+          }}
         />
       </div>
       <div className="flex grow flex-col justify-between gap-4 pt-8">
