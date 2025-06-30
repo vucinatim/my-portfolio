@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Nunito, Roboto_Mono } from 'next/font/google';
 import './globals.css';
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${robotoMono.variable} ${nunito.variable} bg-black font-sans antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
